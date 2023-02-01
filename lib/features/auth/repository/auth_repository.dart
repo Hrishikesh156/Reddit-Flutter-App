@@ -38,8 +38,12 @@ class AuthRepository {
       );
       UserCredential userCredential =
           await _auth.signInWithCredential(credential);
+
+      UserModel userModel;
       print(userCredential.user?.email);
-      UserModel userModel = UserModel(
+
+      if (userCredential.additionalUserInfo!.isNewUser) {
+        userModel = UserModel(
           name: userCredential.user!.displayName ?? 'No name',
           profilePic: userCredential.user!.photoURL ?? Constants.avatarDefault,
           banner: Constants.bannerDefault,
@@ -48,6 +52,8 @@ class AuthRepository {
           karma: 0,
           awards: []);
       await _users.doc(userCredential.user!.uid).set(userModel.toMap());
+      }
+      
     } catch (e) {
       print(e);
     }

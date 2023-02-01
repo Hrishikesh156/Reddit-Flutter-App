@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
         children: [
           const SizedBox(height: 30),
           const Text(
-            'Dive into andfgdything',
+            'Dive into anything',
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
