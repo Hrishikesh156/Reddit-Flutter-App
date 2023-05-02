@@ -4,6 +4,8 @@ import 'package:reddit/features/auth/screens/login_screen.dart';
 import 'package:reddit/theme/pallete.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

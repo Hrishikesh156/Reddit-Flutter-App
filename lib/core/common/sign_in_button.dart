@@ -16,7 +16,10 @@ class SignInButton extends ConsumerWidget {
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: ElevatedButton.icon(
-        onPressed: () => {signInWithGoogle(ref)},
+        onPressed: () => {signInWithGoogle(ref),
+        ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Signed In Successfully!!')),
+        )},
         icon: Image.asset(
           Constants.googlePath,
           width: 35,
